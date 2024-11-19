@@ -1,5 +1,5 @@
 import os
-os.system('cls' if os.name == 'nt' else 'clear')
+
 print("Bem vindo a calculadora")
 print("0 : Soma")
 print("1 : Subtração")
@@ -10,6 +10,7 @@ print("\n")
 
 
 while True:
+    os.system('cls' if os.name == 'nt' else 'clear')
     operacao = int(input("Escolha a operação que deseja realizar: "))
     print("\n")
     
