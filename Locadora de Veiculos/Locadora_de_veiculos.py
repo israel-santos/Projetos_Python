@@ -1,4 +1,4 @@
-#codigo feito com auxilio
+#codigo feito com auxilio. NÃO FIZ SÓ!!! :)
 import os
 
 carros = [
@@ -17,7 +17,7 @@ def mostrar_lista_carros(lista_de_carros):
     for i, car in enumerate(lista_de_carros):
         print("[{}] {} - R$ {} / dia.".format(i, car[0], car[1]))
 
-mostrar_lista_carros(carros)
+
 
 while  True:
     os.system("cls")
@@ -30,13 +30,42 @@ while  True:
 
     os.system("cls")
     if op == 0:
-        pass
+        mostrar_lista_carros(carros)
 
     elif op == 1:
-        pass
+        mostrar_lista_carros(carros)
+        print("-"*40)
+        print("Escolha o código do carro:")
+        cod_car = int(input())
+        print("Por quantos dias você deseja alugar este carro?")
+        dias = int(input())
+        os.system("cls")
+
+        print("Você escolheu {} por {} dias.".format(carros[cod_car] [0], dias))
+        print("")
+        print("O aluguel está com o seguinte valor R$ {}. Deseja finalizar?".format(dias * carros[cod_car][1]))
+
+        print("0 - SIM | 1 - NÃO")
+        conf = int(input())
+        os.system("cls")
+        if conf == 0:
+            print("Parabéns você alugou o {} por {} dias.".format(carros[cod_car][0], dias))
+            alugados.append(carros.pop(cod_car))
+
+
 
     elif op == 2:
-        pass
+        if len(alugados) == 0:
+            print("Não há carros para devolver")
+        else:
+            print("Segue a lista de carros alugados. Qual você deseja devolver?")
+            mostrar_lista_carros(alugados)
+            print("")
+            print("Escolha o código do carro que deseja devolver")
+            cod = int(input())
+            if conf == 0:
+                print("Obrigado por devolver o carro {}.".format(alugados[cod][0]))
+                carros.append(alugados.pop(cod))
 
     print("")
     print("="*40)
